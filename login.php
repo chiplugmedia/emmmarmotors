@@ -14,7 +14,7 @@ include "includes/authhead2.php";
 ?>
 
 
-<div class="min-h-screen flex flex-col lg:flex-row bg-white dark:bg-[#0b1220] transition-colors duration-300">
+<div class="min-h-screen flex flex-col lg:flex-row bg-white dark:bg-black transition-colors duration-300">
 
     <!-- =========================
          LEFT SIDE - INFO PANEL (matches register page)
@@ -114,7 +114,7 @@ include "includes/authhead2.php";
                             value="<?php echo htmlspecialchars($username ?? ''); ?>"
                             placeholder="Enter Username or Email Address"
                             class="w-full pl-12 pr-4 py-3 rounded-xl
-                                   bg-white dark:bg-[#1f2937]
+                                   bg-white dark:bg-black
                                    text-gray-800 dark:text-white
                                    border border-gray-300 dark:border-gray-600
                                    focus:ring-2 focus:ring-[#052da7]
@@ -144,7 +144,7 @@ include "includes/authhead2.php";
                             name="password"
                             placeholder="Enter Password"
                             class="w-full pl-12 pr-12 py-3 rounded-xl
-                                   bg-white dark:bg-[#1f2937]
+                                   bg-white dark:bg-black
                                    text-gray-800 dark:text-white
                                    border border-gray-300 dark:border-gray-600
                                    focus:ring-2 focus:ring-[#052da7]

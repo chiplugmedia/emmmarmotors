@@ -124,7 +124,7 @@
 </style>
 <!-- loader.php -->
 <!-- Page Loader with Pure Tailwind CSS -->
-<div id="pageLoader" class="fixed inset-0 bg-white dark:bg-[#0b1220] flex items-center justify-center z-[9999] transition-all duration-500 ease-in-out">
+<div id="pageLoader" class="fixed inset-0 bg-white dark:bg-black flex items-center justify-center z-[9999] transition-all duration-500 ease-in-out">
     <div class="text-center animate-[fadeInUp_0.6s_ease]">
         <!-- Logo -->
         <div class="w-20 h-20 mx-auto mb-5 animate-[pulse_1.5s_ease-in-out_infinite]">
@@ -138,9 +138,9 @@
         <div class="text-[#052da7] dark:text-gray-100 text-sm font-medium tracking-wide mt-4">
             <?php echo isset($loaderText) ? htmlspecialchars($loaderText) : 'Loading'; ?>
             <span class="inline-flex gap-1 ml-1">
-                <span class="w-1 h-1 bg-[#052da7] dark:bg-blue-400 rounded-full animate-[bounce_1.4s_ease-in-out_infinite] [animation-delay:0s]"></span>
-                <span class="w-1 h-1 bg-[#052da7] dark:bg-blue-400 rounded-full animate-[bounce_1.4s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
-                <span class="w-1 h-1 bg-[#052da7] dark:bg-blue-400 rounded-full animate-[bounce_1.4s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
+                <span class="w-1 h-1 bg-[#052da7] dark:bg-black rounded-full animate-[bounce_1.4s_ease-in-out_infinite] [animation-delay:0s]"></span>
+                <span class="w-1 h-1 bg-[#052da7] dark:bg-black rounded-full animate-[bounce_1.4s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
+                <span class="w-1 h-1 bg-[#052da7] dark:bg-black rounded-full animate-[bounce_1.4s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
             </span>
         </div>
     </div>
@@ -189,9 +189,9 @@
         }, 500);
     });
 </script>
- <!-- Optional: Display current theme badge (read-only) 
+ <!-- Optional: Display current theme badge (read-only) -->
 <div class="fixed top-4 right-4 z-50 flex items-center gap-2
-            bg-white dark:bg-[#111827]
+            bg-white dark:bg-black
             border border-gray-300 dark:border-gray-700
             text-[#052da7] dark:text-white
             px-4 py-2 rounded-xl shadow-lg
@@ -202,4 +202,4 @@
     
     <i id="themeIndicatorIcon" class="fas fa-moon ml-2"></i>
 
-</div> -->
+</div> 

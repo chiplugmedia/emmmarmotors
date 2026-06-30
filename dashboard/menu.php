@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT']."/invest/stream.php";
+require $_SERVER['DOCUMENT_ROOT']."/emmmarmotors/stream.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/actions/account-settings.php";
@@ -11,33 +11,52 @@ $masked_username = substr($username, 0, 6) . '****' . substr($username, -4);
 $ptitle="Menu";
 include "inc/header2.php" ?>
 
+<div class="pt-20">
 
-<div class="pt-15">
-  <div class="fixed left-1/2 top-0 z-50 flex w-full max-w-[590px] -translate-x-1/2 items-center justify-between
-              rounded-b-3xl bg-[#fdf8e5]/80 backdrop-blur-2xl shadow-lg border border-white/20 px-4 py-3">
+    <!-- HEADER -->
+    <div class="fixed top-0 left-1/2 z-50 w-full -translate-x-1/2">
 
-    <!-- Back Button -->
-    <div class="flex min-w-[40px] items-center gap-2">
-      <a href="javascript:history.back()"
-         class="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm transition hover:bg-[#2f4f4e]/10">
+        <div class="flex items-center justify-between
+                    border border-white/40 dark:border-slate-700/50
+                    bg-white/70 dark:bg-slate-900/70
+                    backdrop-blur-xl
+                    shadow-lg
+                    px-4 py-3">
 
-        <i class="bi bi-chevron-left text-sm text-[#2f4f4e]"></i>
+            <!-- Back Button -->
+            <div class="w-10">
 
-      </a>
+                <a href="javascript:history.back()"
+                   class="flex h-9 w-9 items-center justify-center rounded-full
+                          bg-white/80 dark:bg-slate-800/80
+                          text-[#2f4f4e] dark:text-yellow-400
+                          backdrop-blur-md
+                          transition-all duration-300
+                          hover:scale-105
+                          hover:bg-white
+                          dark:hover:bg-slate-700">
+
+                    <i class="bi bi-chevron-left text-sm"></i>
+
+                </a>
+
+            </div>
+
+            <!-- Title -->
+            <h1 class="flex-1 text-center text-sm font-semibold text-[#2f4f4e] dark:text-yellow-400 truncate">
+                <?php echo $ptitle; ?>
+            </h1>
+
+            <!-- Right Spacer -->
+            <div class="w-10"></div>
+
+        </div>
+
     </div>
 
-    <!-- Title -->
-    <h1 class="text-md font-semibold text-[#2f4f4e]">
-      <?php echo $ptitle?>
-    </h1>
-
-    <!-- Right Side -->
-    <div class="flex min-w-[40px] justify-end"></div>
-
-  </div>
 </div>
 
-<div class="px-4 py-4 space-y-5 mt-[60px]">
+<div class="px-4 py-4 space-y-5 mt-[5px] max-w-[590px] mx-auto">
 
     <!-- PROFILE CARD -->
     <div class="relative overflow-hidden rounded-2xl border border-[#FEFBEF] bg-[#1a3332] p-6 text-white">
@@ -213,158 +232,101 @@ include "inc/header2.php" ?>
     <!-- ACCOUNT SETTINGS -->
     <div>
 
-        <p class="mb-2 ml-3 text-[11px] font-bold uppercase tracking-wider text-gray-400">
+        <p class="mb-6 ml-3 text-[11px] font-bold uppercase tracking-wider text-gray-400">
             Account Settings
         </p>
 
-        <div class="overflow-hidden rounded-[1.5rem] border border-[#1a3332] bg-[#FEFBEF] divide-y">
+       <div class="overflow-hidden rounded-[1.5rem] border border-[#1a3332] bg-[#FEFBEF] divide-y">
 
-               <!-- ITEM -->
-            <a href="profile"
-               class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
-
-                <div class="flex items-center gap-4">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
-
-                        <i class="bi bi-person-circle text-[18px]"></i>
-
-                    </div>
-
-                    <span class="text-sm font-semibold text-gray-800">
-                        Account Settings
-                    </span>
-
-                </div>
-
-                <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
-
-            </a>
-
-            <!-- ITEM -->
-            <a href="history"
-               class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
-
-                <div class="flex items-center gap-4">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
-
-                        <i class="bi bi-clock-history text-[18px]"></i>
-
-                    </div>
-
-                    <span class="text-sm font-semibold text-gray-800">
-                        Income History
-                    </span>
-
-                </div>
-
-                <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
-
-            </a>
-
-
-            <!-- ITEM -->
-            <a href="transaction"
-               class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
-
-                <div class="flex items-center gap-4">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
-
-                        <i class="bi bi-clock-history text-[18px]"></i>
-
-                    </div>
-
-                    <span class="text-sm font-semibold text-gray-800">
-                        Transaction History
-                    </span>
-
-                </div>
-
-                <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
-
-            </a>
-
-          <!-- ITEM -->
-            <a href="orders"
-               class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
-
-                <div class="flex items-center gap-4">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
-
-                        <i class="bi bi-cart text-[18px]"></i>
-
-
-                    </div>
-
-                    <span class="text-sm font-semibold text-gray-800">
-                        My Orders
-                    </span>
-
-                </div>
-
-                <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
-
-            </a>
-
-            <!-- ITEM -->
-            <a href="bank"
-               class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
-
-                <div class="flex items-center gap-4">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
-
-                        <i class="bi bi-credit-card text-[18px]"></i>
-
-                    </div>
-
-                    <span class="text-sm font-semibold text-gray-800">
-                        Payout Settings
-                    </span>
-
-                </div>
-
-                <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
-
-            </a>
-
-  <!-- ITEM -->
-            <a href="security"
-               class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
-
-                <div class="flex items-center gap-4">
-
-                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
-
-                        <i class="bi bi-lock text-[18px]"></i>
-
-                    </div>
-
-                    <span class="text-sm font-semibold text-gray-800">
-                        Change Password
-                    </span>
-
-                </div>
-
-                <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
-
-            </a>
-           
+    <!-- ITEM: Account Settings -->
+    <a href="profile" class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
+        <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
+                <i class="bi bi-person-circle text-[18px]"></i>
+            </div>
+            <span class="text-sm font-semibold text-gray-800">Account Settings</span>
         </div>
+        <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
+    </a>
+
+    <!-- ITEM: Income History -->
+    <a href="history" class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
+        <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
+                <i class="bi bi-clock-history text-[18px]"></i>
+            </div>
+            <span class="text-sm font-semibold text-gray-800">Income History</span>
+        </div>
+        <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
+    </a>
+
+    <!-- ITEM: Transaction History -->
+    <a href="transaction" class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
+        <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
+                <i class="bi bi-clock-history text-[18px]"></i>
+            </div>
+            <span class="text-sm font-semibold text-gray-800">Transaction History</span>
+        </div>
+        <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
+    </a>
+
+    <!-- ITEM: My Orders -->
+    <a href="orders" class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
+        <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
+                <i class="bi bi-cart text-[18px]"></i>
+            </div>
+            <span class="text-sm font-semibold text-gray-800">My Orders</span>
+        </div>
+        <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
+    </a>
+
+    <!-- ITEM: Payout Settings -->
+    <a href="bank" class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
+        <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
+                <i class="bi bi-credit-card text-[18px]"></i>
+            </div>
+            <span class="text-sm font-semibold text-gray-800">Payout Settings</span>
+        </div>
+        <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
+    </a>
+
+     <!-- ITEM: Switch Mode (No link, has toggle) -->
+    <div class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
+        <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl 
+     bg-blue-100 text-[#1a3332] 
+     dark:bg-slate-700 dark:text-blue-400 
+     transition group-hover:bg-[#1a3332] group-hover:text-white 
+     dark:group-hover:bg-blue-400 dark:group-hover:text-slate-900">
+    <i class="bi bi-moon-stars text-[18px]"></i>
+</div>
+            <span class="text-sm font-semibold text-gray-800">Switch Mode</span>
+        </div>
+        <button type="button" id="settingsThemeSwitch" class="relative h-6 w-11 rounded-full bg-gray-300 transition-all duration-300">
+            <span id="settingsThemeDot" class="absolute left-1 top-1 h-4 w-4 rounded-full bg-white transition-all duration-300"></span>
+        </button>
     </div>
 
-    
-<!-- LOGOUT -->
-<button
-    type="button"
-    onclick="confirmLogout(event)"
-    class="group w-full mb-[80px] pt-2"
->
+    <!-- ITEM: Change Password -->
+    <a href="security" class="group flex items-center justify-between p-4 transition hover:bg-gray-50">
+        <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-green-100 text-[#1a3332] transition group-hover:bg-[#1a3332] group-hover:text-white">
+                <i class="bi bi-lock text-[18px]"></i>
+            </div>
+            <span class="text-sm font-semibold text-gray-800">Change Password</span>
+        </div>
+        <i class="bi bi-chevron-right text-gray-400 transition group-hover:translate-x-1"></i>
+    </a>
 
-    <div class="flex items-center justify-center gap-3 rounded-[1.5rem] border border-red-500/20 bg-red-500/5 p-4 transition hover:bg-red-500/10">
+   
+
+</div>
+
+
+    <div class="mt-6 mb-8 flex items-center justify-center gap-3 rounded-[1.5rem] border border-red-500/20 bg-red-500/5 p-4 transition hover:bg-red-500/10">
 
         <i class="bi bi-box-arrow-right text-[18px] text-red-500 transition group-hover:-translate-x-1"></i>
 

@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT']."/invest/stream.php";
+require $_SERVER['DOCUMENT_ROOT']."/emmmarmotors/stream.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/actions/account-settings.php";

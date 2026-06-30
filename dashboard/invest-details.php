@@ -1,5 +1,5 @@
 <?php 
-require $_SERVER['DOCUMENT_ROOT']."/invest/stream.php";
+require $_SERVER['DOCUMENT_ROOT']."/emmmarmotors/stream.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/actions/buyprod.php";
@@ -109,7 +109,7 @@ if ($stmt) {
     </div>
 
     <!-- DETAILS -->
-    <div class="rounded-2xl border border-[#1a3332] bg-[#FEFBEF]e p-4 shadow-sm space-y-3 text-sm">
+    <div class="rounded-2xl border border-[#1a3332] bg-[#FEFBEF] p-4 shadow-sm space-y-3 text-sm">
 
         <div class="flex justify-between border-b border-gray-100 pb-2">
             <span class="text-gray-500">Validity Period</span>

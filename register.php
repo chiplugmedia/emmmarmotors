@@ -18,7 +18,7 @@ if (isset($_GET['code'])) {
 $ptitle = "Register";
 include "includes/authhead2.php";
 ?>
-<div class="min-h-screen flex flex-col lg:flex-row bg-white dark:bg-[#0b1220] transition-colors duration-300">
+<div class="min-h-screen flex flex-col lg:flex-row bg-white dark:bg-black transition-colors duration-300">
 
     <!-- =========================
          LEFT SIDE - INFO PANEL
@@ -96,7 +96,7 @@ include "includes/authhead2.php";
                         <div class="relative">
                             <i class="fas fa-user absolute left-4 top-3.5 text-[#052da7]"></i>
                             <input type="text" name="firstname" placeholder="First Name" required
-                                class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                                class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-black
                                 text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                                 transition duration-200">
                         </div>
@@ -104,7 +104,7 @@ include "includes/authhead2.php";
                         <div class="relative">
                             <i class="fas fa-user absolute left-4 top-3.5 text-[#052da7]"></i>
                             <input type="text" name="lastname" placeholder="Last Name" required
-                                class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                                class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-black
                                 text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                                 transition duration-200">
                         </div>
@@ -115,7 +115,7 @@ include "includes/authhead2.php";
                     <div class="relative">
                         <i class="fas fa-at absolute left-4 top-3.5 text-[#052da7]"></i>
                         <input type="text" name="username" placeholder="Username" required
-                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-black
                             text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                             transition duration-200">
                     </div>
@@ -124,7 +124,7 @@ include "includes/authhead2.php";
                     <div class="relative">
                         <i class="fas fa-envelope absolute left-4 top-3.5 text-[#052da7]"></i>
                         <input type="email" name="email" placeholder="Email Address" required
-                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-black
                             text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                             transition duration-200">
                     </div>
@@ -133,7 +133,7 @@ include "includes/authhead2.php";
                     <div class="relative">
                         <i class="fas fa-phone absolute left-4 top-3.5 text-[#052da7]"></i>
                         <input type="tel" name="phonenumber" placeholder="Phone Number" required
-                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-black
                             text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                             transition duration-200">
                     </div>
@@ -142,7 +142,7 @@ include "includes/authhead2.php";
                     <div class="relative">
                         <i class="fas fa-user-circle absolute left-4 top-3.5 text-[#052da7]"></i>
                         <select name="gender" required
-                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border bg-white dark:bg-black
                             text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                             transition duration-200">
 
@@ -159,7 +159,7 @@ include "includes/authhead2.php";
                         <i class="fas fa-lock absolute left-4 top-3.5 text-[#052da7]"></i>
 
                         <input id="password" type="password" name="password" placeholder="Password" required
-                            class="w-full pl-12 pr-12 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                            class="w-full pl-12 pr-12 py-3 rounded-xl border bg-white dark:bg-black
                             text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                             transition duration-200">
 
@@ -174,7 +174,7 @@ include "includes/authhead2.php";
                         <i class="fas fa-lock absolute left-4 top-3.5 text-[#052da7]"></i>
 
                         <input id="confirm_password" type="password" name="confirm_password" placeholder="Confirm Password" required
-                            class="w-full pl-12 pr-12 py-3 rounded-xl border bg-white dark:bg-[#1f2937]
+                            class="w-full pl-12 pr-12 py-3 rounded-xl border bg-white dark:bg-black
                             text-gray-800 dark:text-white focus:ring-2 focus:ring-[#052da7] outline-none
                             transition duration-200">
 

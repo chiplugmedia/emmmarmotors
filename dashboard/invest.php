@@ -1,5 +1,5 @@
 <?php 
-require $_SERVER['DOCUMENT_ROOT']."/invest/stream.php";
+require $_SERVER['DOCUMENT_ROOT']."/emmmarmotors/stream.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/includes/generalinclude.php";
 require $_SERVER['DOCUMENT_ROOT']."$stream/dashboard/actions/buyprod.php";
@@ -119,7 +119,7 @@ include "inc/header2.php" ;
 
             <!-- BUTTON -->
             <a
-                href="/invest/dashboard/invest-details?reference=<?php echo $reference; ?>"
+                href="/emmmarmotors/dashboard/invest-details?reference=<?php echo $reference; ?>"
                 class="group relative flex w-full items-center justify-center gap-2 rounded-md bg-[#2F4F4E] py-3.5 font-semibold text-white transition-all duration-300
          hover:-translate-y-1
          hover:rotate-[-2deg]
