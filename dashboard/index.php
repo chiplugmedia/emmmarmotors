@@ -46,10 +46,48 @@ include "inc/header2.php" ?>
             </div>
 
         </div>
+ <!-- Right Side -->
+            <div class="flex items-center gap-2">
 
+                <!-- Notification -->
+                <button
+                    class="relative h-11 w-11 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-700 dark:text-white hover:scale-105 transition">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span class="absolute top-2 right-2 h-2 w-2 bg-red-500 rounded-full"></span>
+
+                </button>
+
+                <!-- Settings -->
+                <button
+                    class="h-11 w-11 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-700 dark:text-white hover:scale-105 transition">
+
+                    <i class="fas fa-cog"></i>
+
+                </button>
+
+            </div>
+
+        </div>
     </div>
 
 </div>
+
+
+
+<!-- ========================= -->
+<!-- SHARED STYLES (consolidated — was duplicated twice in the original) -->
+<!-- ========================= -->
+<style>
+.scrollbar-hide::-webkit-scrollbar{
+    display:none;
+}
+.scrollbar-hide{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+</style>
 
 <!-- ========================= -->
 <!-- BALANCE SKELETON LOADER -->
@@ -90,7 +128,7 @@ include "inc/header2.php" ?>
             <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 pt-10 pb-10">
 
                 <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-                    <img src="/emmmarmotors/mysite/3diconscolor.png" alt="Wallet" class="w-10 h-10 object-contain">
+                    <img src="https://i.ibb.co/21bGyQSY/3dicons-wallet-dynamic-color.png" alt="Wallet" class="w-10 h-10 object-contain">
 
                     <span class="text-xs sm:text-sm">
                         Total Investment Balance
@@ -123,7 +161,7 @@ include "inc/header2.php" ?>
                 </div>
 
                 <div class="flex items-center gap-2 mt-4">
-                    <h2 class="bal-amount text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white blur-md transition-all duration-300">
+                    <h2 class="bal-amount text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white blur-md transition-all duration-300 select-none">
                         ₦12,500
                     </h2>
 
@@ -148,7 +186,7 @@ include "inc/header2.php" ?>
                 </div>
 
                 <div class="flex items-center gap-2 mt-4">
-                    <h2 class="bal-amount text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white blur-md transition-all duration-300">
+                    <h2 class="bal-amount text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white blur-md transition-all duration-300 select-none">
                         ₦5,200
                     </h2>
 
@@ -187,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dots     = document.querySelectorAll('.dot');
     const amounts  = document.querySelectorAll('.bal-amount');
     const slaves   = document.querySelectorAll('.eye-slave');
+    const slideCount = inner.children.length;
 
     let current = 0;
     let revealed = false;
@@ -197,16 +236,21 @@ document.addEventListener("DOMContentLoaded", () => {
         inner.style.transform = `translateX(-${i * 100}%)`;
 
         dots.forEach((d, idx) => {
-            d.classList.toggle('bg-slate-800', idx === i);
-            d.classList.toggle('bg-slate-300', idx !== i);
+            const active = idx === i;
+            d.classList.toggle('bg-slate-800', active);
+            d.classList.toggle('dark:bg-white', active);
+            d.classList.toggle('bg-slate-300', !active);
+            d.classList.toggle('dark:bg-slate-600', !active);
         });
     }
 
     function syncEyes(rev) {
         revealed = rev;
 
+        // Toggle the same blur-md class the markup already uses,
+        // instead of an inline style, so the blur amount stays consistent.
         amounts.forEach(amount => {
-            amount.style.filter = rev ? 'none' : 'blur(6px)';
+            amount.classList.toggle('blur-md', !rev);
         });
 
         slaves.forEach(btn => {
@@ -244,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
             goTo(
                 Math.max(
                     0,
-                    Math.min(2, current + (diff > 0 ? 1 : -1))
+                    Math.min(slideCount - 1, current + (diff > 0 ? 1 : -1))
                 )
             );
         }
@@ -293,8 +337,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Card 1 -->
         <div class="min-w-[85%] sm:min-w-[420px] snap-start">
             <img
-                src=""
-                alt=""
+                src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/2024-investment-1.jpg"
+                alt="Investment promo banner"
                 class="w-full h-[140px] sm:h-[170px] object-cover rounded-2xl shadow-sm hover:scale-[1.02] transition duration-300"
             >
         </div>
@@ -302,8 +346,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Card 2 -->
         <div class="min-w-[85%] sm:min-w-[420px] snap-start">
             <img
-                src=""
-                alt=""
+                src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/house-money.jpg"
+                alt="Savings promo banner"
                 class="w-full h-[140px] sm:h-[170px] object-cover rounded-2xl shadow-sm hover:scale-[1.02] transition duration-300"
             >
         </div>
@@ -311,8 +355,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Card 3 -->
         <div class="min-w-[85%] sm:min-w-[420px] snap-start">
             <img
-                src=""
-                alt=""
+                src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/2024-investment-1.jpg"
+                alt="Investment promo banner"
                 class="w-full h-[140px] sm:h-[170px] object-cover rounded-2xl shadow-sm hover:scale-[1.02] transition duration-300"
             >
         </div>
@@ -321,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="min-w-[85%] sm:min-w-[420px] snap-start">
             <img
                 src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/2024-investment-1.jpg"
-                alt=""
+                alt="Investment promo banner"
                 class="w-full h-[140px] sm:h-[170px] object-cover rounded-2xl shadow-sm hover:scale-[1.02] transition duration-300"
             >
         </div>
@@ -330,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="min-w-[85%] sm:min-w-[420px] snap-start">
             <img
                 src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/house-money.jpg"
-                alt=""
+                alt="Savings promo banner"
                 class="w-full h-[140px] sm:h-[170px] object-cover rounded-2xl shadow-sm hover:scale-[1.02] transition duration-300"
             >
         </div>
@@ -338,19 +382,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
 </div>
-
-<!-- ========================= -->
-<!-- HIDE SCROLLBAR -->
-<!-- ========================= -->
-<style>
-.scrollbar-hide::-webkit-scrollbar{
-    display:none;
-}
-.scrollbar-hide{
-    -ms-overflow-style:none;
-    scrollbar-width:none;
-}
-</style>
 
 <!-- ========================= -->
 <!-- LOADER SCRIPT -->
@@ -460,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- ========================= -->
 <!-- VETTED OPPORTUNITIES SKELETON -->
 <!-- ========================= -->
-<div id="opportunitySkeleton" class="mt-6 px-4 animate-pulse">
+<div id="opportunitySkeleton" class="mt-6 max-w-[1200px] mx-auto px-4 animate-pulse">
 
     <div class="flex items-center justify-between mb-5">
         <div class="h-6 w-44 bg-slate-200 dark:bg-slate-700 rounded"></div>
@@ -506,7 +537,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- ========================= -->
 <!-- VETTED OPPORTUNITIES -->
 <!-- ========================= -->
-<div id="opportunityContent" class="hidden mt-6 px-4">
+<div id="opportunityContent" class="hidden mt-6 max-w-[1200px] mx-auto px-4">
 
     <!-- Header -->
     <div class="flex items-center justify-between mb-5">
@@ -531,7 +562,8 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="relative">
 
                 <img
-                    src="3"
+                    src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/2024-investment-1.jpg"
+                    alt="Corporate Debt Notes Series LXXII"
                     class="w-full h-40 object-cover">
 
                 <span class="absolute top-3 right-3 bg-rose-600 text-white text-xs px-3 py-1 rounded-full">
@@ -564,7 +596,8 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="relative">
 
                 <img
-                    src="3"
+                    src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/house-money.jpg"
+                    alt="Corporate Debt Notes Series LXIV-B"
                     class="w-full h-40 object-cover">
 
                 <span class="absolute top-3 right-3 bg-rose-600 text-white text-xs px-3 py-1 rounded-full">
@@ -597,7 +630,8 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="relative">
 
                 <img
-                    src="3"
+                    src="https://storage.googleapis.com/piggybankservice.appspot.com/v5/banner/2024-investment-1.jpg"
+                    alt="Advans La Fayette MFB Commercial Paper"
                     class="w-full h-40 object-cover">
 
                 <span class="absolute top-3 right-3 bg-rose-600 text-white text-xs px-3 py-1 rounded-full">
@@ -628,16 +662,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </div>
 
-<style>
-.scrollbar-hide::-webkit-scrollbar{
-    display:none;
-}
-.scrollbar-hide{
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-}
-</style>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -655,7 +679,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- ========================= -->
 <div id="transactionContent" class="hidden mt-6 max-w-[1200px] mx-auto px-4 sm:px-6">
 
-    <div class="bg-white dark:bg-slate-800 mb-30 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden">
+    <div class="bg-white dark:bg-slate-800 mb-28 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden">
 
         <!-- Header -->
         <div class="flex items-center justify-between p-5 border-b border-slate-200 dark:border-slate-700">
@@ -691,7 +715,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="font-semibold text-green-600">
                         +₦50,000
                     </p>
-                   
+                    <span class="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full">
+                        Completed
+                    </span>
                 </div>
             </div>
 
@@ -738,7 +764,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 
 
        <?php include "inc/footer2.php" ?>
