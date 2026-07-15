@@ -1,0 +1,19 @@
+<?php
+if(isset($_POST['signup'])){
+// Fetching variables of the form which travels in URL
+$username = $_POST['username'];
+$coupon = $_POST['coupon'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$refUsername = $_POST['refUsername'];
+$password = $_POST['password'];
+if($username !=''&& $email !=''&& $coupon !=''&& $phone !=''&& $refUsername !=''&& $password !='')
+{
+//  To redirect form on a particular page
+header("Location:https://www.monify.net.ng/login/");
+}
+else{
+?><span><?php echo "Please fill all fields.....!!!!!!!!!!!!";?></span> <?php
+}
+}
+?>
