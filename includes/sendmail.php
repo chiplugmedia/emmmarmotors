@@ -319,7 +319,7 @@ function sendMail($email, $fullname, $message, $subject, $type="") {
                 
                 <div class='email-footer'>
                     <p class='footer-text'>Welcome aboard! We're here to help you succeed.</p>
-                    <p class='copyright'>&copy; " . date('Y') . " American Investment mining platform. All rights reserved.</p>
+                    <p class='copyright'>&copy; " . date('Y') . " Emmmar Motors platform. All rights reserved.</p>
                 </div>
             </div>
         ";
@@ -333,16 +333,16 @@ function sendMail($email, $fullname, $message, $subject, $type="") {
         $body .= "
             <div class='email-container'>
                  <div class='email-header'>
-                    <img src='https://$sitelink/mailer/hivelink.png' alt='American Investment mining platform Logo' class='email-logo'>
+                    <img src='https://$sitelink/mailer/hivelink.png' alt='Emmmar Motorsm Logo' class='email-logo'>
                 </div>
                 
                 <div class='email-body'>
                     <h1 class='email-title'>New Login Detected</h1>
                     
-                    <p class='email-greeting'>Hello, $fullname</p>
+                    <p class='email-greeting'>Hello, $firstname</p>
                     
                     <div class='email-content'>
-                        <p>We detected a successful login to your AIM account.</p>
+                        <p>We detected a successful login to your Emmmar Motors account.</p>
                     </div>
                     
                     <div class='info-box'>
@@ -378,7 +378,7 @@ function sendMail($email, $fullname, $message, $subject, $type="") {
                 
                 <div class='email-footer'>
                     <p class='footer-text'>Protect your account. Never share your login details.</p>
-                    <p class='copyright'>&copy; " . date('Y') . " American Investment mining platform. All rights reserved.</p>
+                    <p class='copyright'>&copy; " . date('Y') . " Emmmar Motors. All rights reserved.</p>
                 </div>
             </div>
         ";
@@ -539,19 +539,19 @@ function sendMail($email, $fullname, $message, $subject, $type="") {
 
     // Transaction PIN Template (set / reset transaction PIN)
     else if ($type == "transactionPin") {
-        $fullname = $message['fullname'];
+        $firstname = $message['firstname'];
         $otp = $message['otp'];
 
         $body .= "
             <div class='email-container'>
                 <div class='email-header'>
-                    <img src='https://$sitelink/mailer/hivelink.png' alt='American Investment mining platform Logo' class='email-logo'>
+                    <img src='https://$sitelink/mailer/hivelink.png' alt='Emmmar Motors Logo' class='email-logo'>
                 </div>
 
                 <div class='email-body'>
                     <h1 class='email-title'>Transaction PIN Request</h1>
 
-                    <p class='email-greeting'>Hello, $fullname</p>
+                    <p class='email-greeting'>Hello, $firstname</p>
 
                     <div class='email-content'>
                         <p>We received a request to set/reset your transaction PIN. Use the one-time code below to continue.</p>
@@ -573,7 +573,7 @@ function sendMail($email, $fullname, $message, $subject, $type="") {
 
                 <div class='email-footer'>
                     <p class='footer-text'>This is an automated email. Please do not reply to this message.</p>
-                    <p class='copyright'>&copy; " . date('Y') . " American Investment mining platform. All rights reserved.</p>
+                    <p class='copyright'>&copy; " . date('Y') . " Emmmar Motors. All rights reserved.</p>
                 </div>
             </div>
         ";

@@ -26,7 +26,9 @@ if (isset($_POST['login'])) {
             $row = $result->fetch_assoc();
 
             $storedPassword = $row['password'];
-            $username     = $row['username'];
+            $username       = $row['username'];
+            $firstname      = $row['firstname'];
+            $email          = $row['email'];   // ✅ FIX: was missing, needed for login notification
             $role           = $row['role'];
             $accountStatus  = $row['status'];
             $time           = $row['time'];
@@ -45,8 +47,19 @@ if (isset($_POST['login'])) {
                 session_write_close();
 
                 $genMsg = sendResponse("success", "Login successful!");
-                
-            
+
+                // ================== LOGIN NOTIFICATION ==================
+                $ip       = $_SERVER['REMOTE_ADDR'];
+                $datetime = gmdate("jS M, Y | g:i A") . " UTC";
+
+                $subject = "Login Notification - Emmmar Motors";
+                $message = [
+                    "ip"       => $ip,
+                    "datetime" => $datetime
+                ];
+                $type = "loginNotify";
+
+                sendMail($email, $firstname, $message, $subject, $type);
 
                 // ✅ Redirect based on role
                 if (in_array($role, ['user', 'vendor'])) {

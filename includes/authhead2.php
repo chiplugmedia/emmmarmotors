@@ -41,33 +41,7 @@
     
 </head>
 <body>
-<!-- loader.php -->
-<div id="pageLoader" class="fixed inset-0 bg-white dark:bg-black flex items-center justify-center z-[9999] transition-all duration-500 ease-in-out">
-    <div class="text-center animate-[fadeInUp_0.6s_ease]">
 
-        <!-- Logo -->
-        <div class="w-20 h-20 mx-auto mb-5 animate-[pulse_1.5s_ease-in-out_infinite]">
-
-            <!-- Light Mode Logo -->
-            <img src="/emmmarmotors/emma/img/emmalightmood.png"
-                 alt="<?php echo htmlspecialchars($sitename); ?>"
-                 class="w-full h-full object-cover rounded-2xl shadow-lg block dark:hidden">
-
-            <!-- Dark Mode Logo -->
-            <img src="/emmmarmotors/emma/img/emmadarkmood.png"
-                 alt="<?php echo htmlspecialchars($sitename); ?>"
-                 class="w-full h-full object-cover rounded-2xl shadow-2xl hidden dark:block">
-
-        </div>
-
-        <!-- Straight Line Loader -->
-        <div class="w-40 h-1 mx-auto my-5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden relative">
-            <span class="absolute top-0 left-0 h-full w-1/3 bg-[#052da7] dark:bg-blue-400 rounded-full animate-[lineLoader_1.2s_ease-in-out_infinite]"></span>
-        </div>
-
-        
-    </div>
-</div>
 
 <style>
     @keyframes fadeInUp {
